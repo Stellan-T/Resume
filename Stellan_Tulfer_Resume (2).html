@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stellan Tulfer — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f0eb;
+    --accent: #c8ff00;
+    --grey: #b0b0b0;
+    --dim: #777;
+    --card-bg: #141414;
+    --border: #2a2a2a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* === GRAIN OVERLAY === */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* === SCROLL ANIMATIONS === */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* === HERO === */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 80px;
+    position: relative;
+  }
+
+  .hero-top-bar {
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    right: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--grey);
+  }
+
+  .hero-top-bar a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .hero-top-bar a:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  .hero-name {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(64px, 10vw, 140px);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .hero-name .line-2 {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--white);
+  }
+
+  .hero-tagline {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: clamp(20px, 3vw, 32px);
+    color: var(--grey);
+    max-width: 600px;
+    margin-bottom: 50px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 40px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .hero-meta span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero-meta .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* === MARQUEE === */
+  .marquee-wrapper {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+  }
+
+  .marquee {
+    display: flex;
+    animation: marquee 25s linear infinite;
+    white-space: nowrap;
+    gap: 60px;
+  }
+
+  .marquee span {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--dim);
+    flex-shrink: 0;
+  }
+
+  .marquee .highlight {
+    color: var(--accent);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* === SECTION LAYOUT === */
+  .section {
+    padding: 100px 80px;
+    position: relative;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent);
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* === ABOUT GRID === */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-statement {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.4;
+    color: var(--white);
+  }
+
+  .about-statement strong {
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+  }
+
+  .detail-row .label {
+    color: var(--dim);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .detail-row .value {
+    color: var(--white);
+    text-align: right;
+  }
+
+  /* === GPA VISUAL === */
+  .gpa-visual {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .gpa-bar-bg {
+    flex: 1;
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gpa-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    width: 0;
+  }
+
+  .gpa-bar-fill.animate {
+    width: 86%;
+  }
+
+  .gpa-number {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color: var(--accent);
+  }
+
+  /* === EXPERIENCE TIMELINE === */
+  .timeline {
+    position: relative;
+    padding-left: 60px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--accent), var(--border), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -48px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: var(--black);
+  }
+
+  .timeline-item.current::before {
+    background: var(--accent);
+    box-shadow: 0 0 12px rgba(200, 255, 0, 0.4);
+  }
+
+  .timeline-date {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--dim);
+    margin-bottom: 8px;
+  }
+
+  .timeline-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .timeline-place {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--grey);
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .timeline-desc {
+    color: var(--grey);
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 500px;
+  }
+
+  .timeline-desc li {
+    list-style: none;
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+
+  .timeline-desc li::before {
+    content: '//';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 10px;
+  }
+
+  /* === SKILLS SECTION === */
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .skill-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    cursor: default;
+  }
+
+  .skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(200, 255, 0, 0.05);
+  }
+
+  .skill-card::before {
+    content: attr(data-index);
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    font-family: 'Syne', sans-serif;
+    font-size: 60px;
+    font-weight: 800;
+    color: rgba(200, 255, 0, 0.04);
+    line-height: 1;
+  }
+
+  .skill-card .skill-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .skill-card .skill-sub {
+    font-size: 11px;
+    color: var(--dim);
+    line-height: 1.6;
+  }
+
+  /* === EDUCATION === */
+  .edu-block {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .edu-block:last-child {
+    border-bottom: none;
+  }
+
+  .edu-year {
+    font-family: 'Syne', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.3;
+  }
+
+  .edu-content h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .edu-content .school {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--grey);
+    margin-bottom: 16px;
+    font-size: 15px;
+  }
+
+  .edu-content .desc {
+    color: var(--grey);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .edu-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .edu-tag {
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--grey);
+    transition: all 0.3s;
+  }
+
+  .edu-tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* === LANGUAGES === */
+  .languages-grid {
+    display: flex;
+    gap: 60px;
+  }
+
+  .lang-item {
+    flex: 1;
+  }
+
+  .lang-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .lang-bar {
+    height: 3px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  .lang-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    width: 0;
+  }
+
+  .lang-fill.animate {
+    width: var(--level);
+  }
+
+  .lang-level {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--dim);
+  }
+
+  /* === CONTACT FOOTER === */
+  .contact-section {
+    padding: 100px 80px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .contact-headline {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 40px;
+  }
+
+  .contact-headline .outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--white);
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+
+  .contact-link {
+    text-decoration: none;
+    color: var(--grey);
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+
+  .contact-link:hover {
+    color: var(--accent);
+  }
+  .contact-link:hover::after {
+    width: 100%;
+  }
+
+  .footer-note {
+    font-size: 10px;
+    color: var(--dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* === FLOATING CORNER TEXT === */
+  .corner-text {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dim);
+    writing-mode: vertical-lr;
+    z-index: 100;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    .hero { padding: 40px 30px; }
+    .hero-top-bar { left: 30px; right: 30px; top: 20px; }
+    .section { padding: 60px 30px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .skills-container { grid-template-columns: 1fr 1fr; }
+    .edu-block { grid-template-columns: 1fr; gap: 16px; }
+    .edu-year { font-size: 32px; }
+    .languages-grid { flex-direction: column; gap: 30px; }
+    .contact-links { flex-direction: column; gap: 20px; align-items: center; }
+    .hero-meta { flex-wrap: wrap; gap: 20px; }
+    .contact-section { padding: 60px 30px; }
+    .corner-text { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .skills-container { grid-template-columns: 1fr; }
+  }
+
+  /* === PRINT === */
+  @media print {
+    body { background: white; color: black; font-size: 11px; }
+    body::before { display: none; }
+    .corner-text { display: none; }
+    .marquee-wrapper { display: none; }
+    .hero { min-height: auto; padding: 40px; }
+    .section { padding: 30px 40px; }
+    .hero-name { font-size: 48px; color: black; }
+    .hero-name .line-2 { -webkit-text-stroke-color: black; }
+    .skill-card { break-inside: avoid; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Fixed corner text -->
+<div class="corner-text">Open for a parttime / working student position / 2026</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-top-bar">
+    <span>Curriculum Vitae</span>
+    <a href="mailto:stellan.tulfer@gmail.com">stellan.tulfer@gmail.com</a>
+  </div>
+
+  <div class="hero-name">
+    <span>Stellan</span>
+    <span class="line-2">Tulfer</span>
+  </div>
+
+  <div class="hero-tagline">
+    AI student who codes neural networks by day and cooks restaurant meals by night — wired for both logic and creativity.
+  </div>
+
+  <div class="hero-meta">
+    <span><span class="dot"></span> Almere, NL</span>
+    <span><span class="dot"></span> BSc Artificial Intelligence</span>
+    <span><span class="dot"></span> University of Amsterdam</span>
+    <span><span class="dot"></span> Available 16 hrs/week</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrapper">
+  <div class="marquee">
+    <span>Python</span>
+    <span class="highlight">Machine Learning</span>
+    <span>PyTorch</span>
+    <span>Data Analysis</span>
+    <span class="highlight">Neural Networks</span>
+    <span>NLP</span>
+    <span>Computer Vision</span>
+    <span class="highlight">Statistics</span>
+    <span>Linear Algebra</span>
+    <span>Problem Solving</span>
+    <!-- Duplicate for seamless loop -->
+    <span>Python</span>
+    <span class="highlight">Machine Learning</span>
+    <span>PyTorch</span>
+    <span>Data Analysis</span>
+    <span class="highlight">Neural Networks</span>
+    <span>NLP</span>
+    <span>Computer Vision</span>
+    <span class="highlight">Statistics</span>
+    <span>Linear Algebra</span>
+    <span>Problem Solving</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section">
+  <div class="section-label reveal">01 — About</div>
+  <div class="about-grid">
+    <div class="about-statement reveal">
+      I'm a second-year AI student with a <strong>GPA of 8.6</strong> and a stubborn curiosity about how machines can learn, see, and understand language. I thrive where analytical thinking meets creative problem-solving — which is exactly why I'm drawn to ACE.
+    </div>
+    <div class="about-details reveal">
+      <div class="detail-row">
+        <span class="label">Location</span>
+        <span class="value">Almere, the Netherlands</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Phone</span>
+        <span class="value">06 53529458</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Email</span>
+        <span class="value">stellan.tulfer@gmail.com</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">LinkedIn</span>
+        <span class="value"><a href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--accent); transition: color 0.3s;">linkedin.com/in/stellan-tulfer</a></span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Availability</span>
+        <span class="value">16 hours / week</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Current University GPA</span>
+        <span class="value">
+          <div class="gpa-visual">
+            <div class="gpa-bar-bg"><div class="gpa-bar-fill" id="gpaBar"></div></div>
+            <span class="gpa-number">8.6</span>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section">
+  <div class="section-label reveal">02 — Education</div>
+
+  <div class="edu-block reveal">
+    <div class="edu-year">2024</div>
+    <div class="edu-content">
+      <h3>BSc Artificial Intelligence</h3>
+      <div class="school">University of Amsterdam — Sep 2024 - Present</div>
+      <div class="desc">
+        Deep-diving into machine learning, neural networks, and the math that powers them. Building AI models with Python and PyTorch, analyzing large datasets, and developing algorithms for NLP and computer vision. Applying linear algebra, calculus, and probability theory daily.
+      </div>
+      <div class="edu-tags">
+        <span class="edu-tag">Machine Learning</span>
+        <span class="edu-tag">Neural Networks</span>
+        <span class="edu-tag">Python</span>
+        <span class="edu-tag">PyTorch</span>
+        <span class="edu-tag">NLP</span>
+        <span class="edu-tag">Computer Vision</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-block reveal">
+    <div class="edu-year">2018</div>
+    <div class="edu-content">
+      <h3>VWO-ATH</h3>
+      <div class="school">Montessori Lyceum Flevoland, Almere — Sep 2018 - Jun 2024</div>
+      <div class="desc">
+        Graduated with a 7.6 GPA across dual profiles: Economics & Society and Culture & Society. Built a strong analytical foundation while developing cultural awareness — a combination that bridges the technical and the human.
+      </div>
+      <div class="edu-tags">
+        <span class="edu-tag">Economics & Society</span>
+        <span class="edu-tag">Culture & Society</span>
+        <span class="edu-tag">GPA: 7.6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section">
+  <div class="section-label reveal">03 — Experience</div>
+
+  <div class="timeline">
+    <div class="timeline-item current reveal">
+      <div class="timeline-date">Oct 2024 — Present</div>
+      <div class="timeline-title">Kitchen Staff</div>
+      <div class="timeline-place">Loetje, Almere</div>
+      <div class="timeline-desc">
+        <ul>
+          <li>Independently preparing and cooking menu items to maintain quality and consistency</li>
+          <li>Collaborating with the kitchen team for efficient and timely service</li>
+          <li>Organizing and planning kitchen tasks for optimal workflow</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Oct 2023 — Oct 2024</div>
+      <div class="timeline-title">Supermarket Employee</div>
+      <div class="timeline-place">DekaMarkt, Almere</div>
+      <div class="timeline-desc">
+        <ul>
+          <li>Customer service and store operations in a fast-paced retail environment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Jul 2022 — Jul 2023</div>
+      <div class="timeline-title">Delivery Driver</div>
+      <div class="timeline-place">Kwalitaria, Almere</div>
+      <div class="timeline-desc">
+        <ul>
+          <li>Efficient route management and customer-facing delivery operations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section">
+  <div class="section-label reveal">04 — Skills</div>
+
+  <div class="skills-container">
+    <div class="skill-card reveal" data-index="01">
+      <div class="skill-name">Python Programming</div>
+      <div class="skill-sub">Core language for AI development, data pipelines, and rapid prototyping</div>
+    </div>
+    <div class="skill-card reveal" data-index="02">
+      <div class="skill-name">Machine Learning</div>
+      <div class="skill-sub">Designing, training, and evaluating models — from classical algorithms to deep learning</div>
+    </div>
+    <div class="skill-card reveal" data-index="03">
+      <div class="skill-name">Data Analysis</div>
+      <div class="skill-sub">Extracting insights from complex datasets using statistical methods and visualization</div>
+    </div>
+    <div class="skill-card reveal" data-index="04">
+      <div class="skill-name">Statistical Methods</div>
+      <div class="skill-sub">Hypothesis testing, regression, probability theory — making sense of uncertainty</div>
+    </div>
+    <div class="skill-card reveal" data-index="05">
+      <div class="skill-name">Interpreting Data</div>
+      <div class="skill-sub">Translating raw numbers into narratives that drive decisions</div>
+    </div>
+    <div class="skill-card reveal" data-index="06">
+      <div class="skill-name">Problem Solving</div>
+      <div class="skill-sub">Breaking down complex challenges into tractable steps — both independently and in teams</div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section class="section">
+  <div class="section-label reveal">05 — Languages</div>
+
+  <div class="languages-grid reveal">
+    <div class="lang-item">
+      <div class="lang-name">Dutch</div>
+      <div class="lang-bar"><div class="lang-fill" style="--level: 100%"></div></div>
+      <div class="lang-level">Native</div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-name">English</div>
+      <div class="lang-bar"><div class="lang-fill" style="--level: 95%"></div></div>
+      <div class="lang-level">Fluent</div>
+    </div>
+    <div class="lang-item">
+      <div class="lang-name">German</div>
+      <div class="lang-bar"><div class="lang-fill" style="--level: 40%"></div></div>
+      <div class="lang-level">Conversational</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-headline reveal">
+    Let's <span class="outline">connect.</span>
+  </div>
+  <div class="contact-links reveal">
+    <a href="mailto:stellan.tulfer@gmail.com" class="contact-link">stellan.tulfer@gmail.com</a>
+    <a href="tel:+31653529458" class="contact-link">06 53529458</a>
+    <a href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" class="contact-link">LinkedIn — Stellan Tulfer</a>
+  </div>
+  <div class="footer-note reveal">Stellan Tulfer / Almere, NL / 2026</div>
+</section>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // GPA bar animation
+  const gpaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.getElementById('gpaBar').classList.add('animate');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const gpaEl = document.getElementById('gpaBar');
+  if (gpaEl) gpaObserver.observe(gpaEl);
+
+  // Language bars animation
+  const langObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.lang-fill').forEach(bar => {
+          bar.classList.add('animate');
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.languages-grid').forEach(el => langObserver.observe(el));
+</script>
+
+</body>
+</html>
