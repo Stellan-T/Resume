@@ -7,13 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --black: #0a0a0a;
-    --white: #f5f0eb;
-    --accent: #c8ff00;
-    --grey: #b0b0b0;
-    --dim: #777;
-    --card-bg: #141414;
-    --border: #2a2a2a;
+    --black: #f4f5f7;
+    --white: #1a1a1a;
+    --accent: #4682b4;
+    --grey: #4a4a4a;
+    --dim: #888;
+    --card-bg: #ffffff;
+    --border: #d8dde3;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,7 +27,9 @@
     overflow-x: hidden;
   }
 
-  /* === GRAIN OVERLAY === */
+  /* ============================================================
+     GRAIN OVERLAY
+     ============================================================ */
   body::before {
     content: '';
     position: fixed;
@@ -38,7 +40,9 @@
     z-index: 9999;
   }
 
-  /* === SCROLL ANIMATIONS === */
+  /* ============================================================
+     SCROLL ANIMATIONS
+     ============================================================ */
   .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -49,7 +53,9 @@
     transform: translateY(0);
   }
 
-  /* === HERO === */
+  /* ============================================================
+     HERO
+     ============================================================ */
   .hero {
     min-height: 100vh;
     display: flex;
@@ -131,7 +137,9 @@
     display: inline-block;
   }
 
-  /* === MARQUEE === */
+  /* ============================================================
+     MARQUEE
+     ============================================================ */
   .marquee-wrapper {
     overflow: hidden;
     border-top: 1px solid var(--border);
@@ -165,7 +173,9 @@
     100% { transform: translateX(-50%); }
   }
 
-  /* === SECTION LAYOUT === */
+  /* ============================================================
+     SECTION LAYOUT
+     ============================================================ */
   .section {
     padding: 100px 80px;
     position: relative;
@@ -190,7 +200,9 @@
     background: var(--border);
   }
 
-  /* === ABOUT GRID === */
+  /* ============================================================
+     ABOUT GRID
+     ============================================================ */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -235,7 +247,9 @@
     text-align: right;
   }
 
-  /* === GPA VISUAL === */
+  /* ============================================================
+     GPA VISUAL
+     ============================================================ */
   .gpa-visual {
     display: flex;
     align-items: center;
@@ -261,7 +275,7 @@
   }
 
   .gpa-bar-fill.animate {
-    width: 86%;
+    width: 85%;
   }
 
   .gpa-number {
@@ -271,7 +285,9 @@
     color: var(--accent);
   }
 
-  /* === EXPERIENCE TIMELINE === */
+  /* ============================================================
+     EXPERIENCE TIMELINE
+     ============================================================ */
   .timeline {
     position: relative;
     padding-left: 60px;
@@ -306,7 +322,7 @@
 
   .timeline-item.current::before {
     background: var(--accent);
-    box-shadow: 0 0 12px rgba(200, 255, 0, 0.4);
+    box-shadow: 0 0 12px rgba(70, 130, 180, 0.4);
   }
 
   .timeline-date {
@@ -354,7 +370,9 @@
     font-size: 10px;
   }
 
-  /* === SKILLS SECTION === */
+  /* ============================================================
+     SKILLS SECTION
+     ============================================================ */
   .skills-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -374,7 +392,7 @@
   .skill-card:hover {
     border-color: var(--accent);
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(200, 255, 0, 0.05);
+    box-shadow: 0 12px 40px rgba(70, 130, 180, 0.12);
   }
 
   .skill-card::before {
@@ -385,7 +403,7 @@
     font-family: 'Syne', sans-serif;
     font-size: 60px;
     font-weight: 800;
-    color: rgba(200, 255, 0, 0.04);
+    color: rgba(70, 130, 180, 0.08);
     line-height: 1;
   }
 
@@ -402,7 +420,9 @@
     line-height: 1.6;
   }
 
-  /* === EDUCATION === */
+  /* ============================================================
+     EDUCATION
+     ============================================================ */
   .edu-block {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -468,7 +488,9 @@
     color: var(--accent);
   }
 
-  /* === LANGUAGES === */
+  /* ============================================================
+     LANGUAGES
+     ============================================================ */
   .languages-grid {
     display: flex;
     gap: 60px;
@@ -512,7 +534,9 @@
     color: var(--dim);
   }
 
-  /* === CONTACT FOOTER === */
+  /* ============================================================
+     CONTACT FOOTER
+     ============================================================ */
   .contact-section {
     padding: 100px 80px;
     border-top: 1px solid var(--border);
@@ -573,7 +597,9 @@
     text-transform: uppercase;
   }
 
-  /* === FLOATING CORNER TEXT === */
+  /* ============================================================
+     FLOATING CORNER TEXT
+     ============================================================ */
   .corner-text {
     position: fixed;
     bottom: 30px;
@@ -586,7 +612,9 @@
     z-index: 100;
   }
 
-  /* === RESPONSIVE === */
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
   @media (max-width: 900px) {
     .hero { padding: 40px 30px; }
     .hero-top-bar { left: 30px; right: 30px; top: 20px; }
@@ -606,7 +634,9 @@
     .skills-container { grid-template-columns: 1fr; }
   }
 
-  /* === PRINT === */
+  /* ============================================================
+     PRINT
+     ============================================================ */
   @media print {
     body { background: white; color: black; font-size: 11px; }
     body::before { display: none; }
@@ -623,10 +653,8 @@
 </head>
 <body>
 
-<!-- Fixed corner text -->
-<div class="corner-text">Open for a parttime / working student position / 2026</div>
+<div class="corner-text">Working student AI / 2026</div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-top-bar">
     <span>Curriculum Vitae</span>
@@ -646,11 +674,10 @@
     <span><span class="dot"></span> Almere, NL</span>
     <span><span class="dot"></span> BSc Artificial Intelligence</span>
     <span><span class="dot"></span> University of Amsterdam</span>
-    <span><span class="dot"></span> Available 16 hrs/week</span>
+    <span><span class="dot"></span> Working Student AI</span>
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-wrapper">
   <div class="marquee">
     <span>Python</span>
@@ -663,7 +690,6 @@
     <span class="highlight">Statistics</span>
     <span>Linear Algebra</span>
     <span>Problem Solving</span>
-    <!-- Duplicate for seamless loop -->
     <span>Python</span>
     <span class="highlight">Machine Learning</span>
     <span>PyTorch</span>
@@ -677,12 +703,11 @@
   </div>
 </div>
 
-<!-- ABOUT -->
 <section class="section">
   <div class="section-label reveal">01 — About</div>
   <div class="about-grid">
     <div class="about-statement reveal">
-      I'm a second-year AI student with a <strong>GPA of 8.6</strong> and a deep fascination with how machines learn, how intelligent systems are built, and where the boundaries of technology and AI can still be pushed. I thrive where analytical thinking meets creative problem-solving — and I'm looking for a place where both are valued.
+      I'm a second-year AI student with a <strong>GPA of 8.5</strong> and a deep fascination with how machines learn, how intelligent systems are built, and where the boundaries of technology and AI can still be pushed. I thrive where analytical thinking meets creative problem-solving — and I'm currently putting both to work as a Working Student AI.
     </div>
     <div class="about-details reveal">
       <div class="detail-row">
@@ -698,15 +723,15 @@
         <span class="value"><a href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--accent); transition: color 0.3s;">linkedin.com/in/stellan-tulfer</a></span>
       </div>
       <div class="detail-row">
-        <span class="label">Availability</span>
-        <span class="value">16 hours / week</span>
+        <span class="label">Current Role</span>
+        <span class="value">Working Student AI</span>
       </div>
       <div class="detail-row">
         <span class="label">Current University GPA</span>
         <span class="value">
           <div class="gpa-visual">
             <div class="gpa-bar-bg"><div class="gpa-bar-fill" id="gpaBar"></div></div>
-            <span class="gpa-number">8.6</span>
+            <span class="gpa-number">8.5</span>
           </div>
         </span>
       </div>
@@ -714,7 +739,6 @@
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section class="section">
   <div class="section-label reveal">02 — Education</div>
 
@@ -754,20 +778,30 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section class="section">
   <div class="section-label reveal">03 — Experience</div>
 
   <div class="timeline">
     <div class="timeline-item current reveal">
+      <div class="timeline-date">May 2026 — Present</div>
+      <div class="timeline-title">Working Student AI</div>
+      <div class="timeline-place">REVOCIVIC</div>
+      <div class="timeline-desc">
+        <ul>
+          <li>Responsible for creating and managing municipality software</li>
+          <li>Leveraging GenAI to accelerate development and streamline delivery processes</li>
+          <li>Translating complex public-sector requirements into practical AI-powered solutions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
       <div class="timeline-date">Oct 2024 — Present</div>
       <div class="timeline-title">Kitchen Staff</div>
       <div class="timeline-place">Loetje, Almere</div>
       <div class="timeline-desc">
         <ul>
-          <li>Independently preparing and cooking menu items to maintain quality and consistency</li>
-          <li>Collaborating with the kitchen team for efficient and timely service</li>
-          <li>Organizing and planning kitchen tasks for optimal workflow</li>
+          <li>Independently preparing menu items and collaborating with the kitchen team to keep service efficient, organized, and consistently high-quality</li>
         </ul>
       </div>
     </div>
@@ -796,7 +830,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section class="section">
   <div class="section-label reveal">04 — Skills</div>
 
@@ -828,7 +861,6 @@
   </div>
 </section>
 
-<!-- LANGUAGES -->
 <section class="section">
   <div class="section-label reveal">05 — Languages</div>
 
@@ -851,7 +883,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact-section">
   <div class="contact-headline reveal">
     Let's <span class="outline">connect.</span>
@@ -864,7 +895,6 @@
 </section>
 
 <script>
-  // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -875,7 +905,6 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // GPA bar animation
   const gpaObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -887,7 +916,6 @@
   const gpaEl = document.getElementById('gpaBar');
   if (gpaEl) gpaObserver.observe(gpaEl);
 
-  // Language bars animation
   const langObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
