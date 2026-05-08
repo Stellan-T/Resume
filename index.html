@@ -489,6 +489,65 @@
   }
 
   /* ============================================================
+     MINOR SUB-BLOCK
+     ============================================================ */
+  .edu-minor {
+    margin-top: 32px;
+    padding: 24px 0 0 24px;
+    border-left: 1px solid var(--border);
+    position: relative;
+  }
+
+  .edu-minor::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    width: 1px;
+    height: 24px;
+    background: var(--accent);
+  }
+
+  .edu-minor-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .edu-minor-label::before {
+    content: '↳';
+    color: var(--accent);
+  }
+
+  .edu-minor h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--white);
+  }
+
+  .edu-minor .school {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    color: var(--grey);
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .edu-minor .desc {
+    color: var(--grey);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  /* ============================================================
      LANGUAGES
      ============================================================ */
   .languages-grid {
@@ -757,6 +816,23 @@
         <span class="edu-tag">PyTorch</span>
         <span class="edu-tag">NLP</span>
         <span class="edu-tag">Computer Vision</span>
+      </div>
+
+      <div class="edu-minor">
+        <div class="edu-minor-label">Minor / Free Electives Year 3</div>
+        <h4>Managing Digital Innovation</h4>
+        <div class="school">Vrije Universiteit Amsterdam — 30 EC</div>
+        <div class="desc">
+          A five-course minor exploring how digital technologies (AI, blockchain, IoT, cloud) reshape organizations, work, and business models. Bridging the technical AI background with strategy, innovation management, and the human side of digital transformation. Critical reflection on the why and the consequences of digital change, not just the how.
+        </div>
+        <div class="edu-tags">
+          <span class="edu-tag">Digital Innovation</span>
+          <span class="edu-tag">Innovation Management</span>
+          <span class="edu-tag">Business Strategy</span>
+          <span class="edu-tag">Digital Platforms</span>
+          <span class="edu-tag">Industry Disruption</span>
+          <span class="edu-tag">New Ways of Working</span>
+        </div>
       </div>
     </div>
   </div>
