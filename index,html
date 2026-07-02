@@ -1,0 +1,235 @@
+    <article class="card reveal">
+      <div class="card-top">
+        <div>
+          <h3>VWO-ATH</h3>
+          <p class="card-sub">Montessori Lyceum Flevoland, Almere</p>
+        </div>
+        <div class="card-side">
+          <span class="card-dates">SEP 2018 — JUN 2024</span>
+          <span class="gpa-chip">GPA 7.6</span>
+        </div>
+      </div>
+      <p class="card-desc">
+        Graduated with a 7.6 GPA across dual profiles: Economics &amp; Society and Culture &amp; Society.
+      </p>
+      <ul class="tags">
+        <li>Economics &amp; Society</li><li>Culture &amp; Society</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label reveal">04 — Skills</div>
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills" data-section="skills">
+  <div class="sec-head reveal">
+    <span class="sec-index">04</span>
+    <h2>Skills</h2>
+    <span class="sec-cmd" aria-hidden="true">$ ls skills/</span>
+  </div>
+
+  <div class="skills-container">
+    <div class="skill-card reveal" data-index="01">
+      <div class="skill-name">Python Programming</div>
+      <div class="skill-sub">Core language for AI development, data pipelines, and rapid prototyping</div>
+  <div class="skills-grid">
+    <div class="skill reveal">
+      <span class="skill-index">01</span>
+      <h3>Python Programming</h3>
+      <p>Core language for AI development, data pipelines, and rapid prototyping.</p>
+    </div>
+    <div class="skill-card reveal" data-index="02">
+      <div class="skill-name">Machine Learning</div>
+      <div class="skill-sub">Designing, training, and evaluating models — from classical algorithms to deep learning</div>
+    <div class="skill reveal">
+      <span class="skill-index">02</span>
+      <h3>Machine Learning</h3>
+      <p>Designing, training, and evaluating models — from classical algorithms to deep learning.</p>
+    </div>
+    <div class="skill-card reveal" data-index="03">
+      <div class="skill-name">Data Analysis</div>
+      <div class="skill-sub">Extracting insights from complex datasets using statistical methods and visualization</div>
+    <div class="skill reveal">
+      <span class="skill-index">03</span>
+      <h3>Data Analysis</h3>
+      <p>Extracting insights from complex datasets using statistical methods and visualization.</p>
+    </div>
+    <div class="skill-card reveal" data-index="04">
+      <div class="skill-name">Statistical Methods</div>
+      <div class="skill-sub">Hypothesis testing, regression, probability theory — making sense of uncertainty</div>
+    <div class="skill reveal">
+      <span class="skill-index">04</span>
+      <h3>Statistical Methods</h3>
+      <p>Hypothesis testing, regression, and probability theory.</p>
+    </div>
+    <div class="skill-card reveal" data-index="05">
+      <div class="skill-name">Interpreting Data</div>
+      <div class="skill-sub">Translating raw numbers into narratives that drive decisions</div>
+    <div class="skill reveal">
+      <span class="skill-index">05</span>
+      <h3>Interpreting Data</h3>
+      <p>Translating raw numbers into narratives that drive decisions.</p>
+    </div>
+    <div class="skill-card reveal" data-index="06">
+      <div class="skill-name">Problem Solving</div>
+      <div class="skill-sub">Breaking down complex challenges into tractable steps — both independently and in teams</div>
+    <div class="skill reveal">
+      <span class="skill-index">06</span>
+      <h3>Problem Solving</h3>
+      <p>Breaking down complex challenges into tractable steps — independently and in teams.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label reveal">05 — Languages</div>
+<!-- marquee: supporting tech stack -->
+<div class="marquee reveal" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PYTORCH</span><span>·</span><span>NLP</span><span>·</span><span>COMPUTER VISION</span><span>·</span>
+    <span>NEURAL NETWORKS</span><span>·</span><span>LINEAR ALGEBRA</span><span>·</span><span>PYTHON</span><span>·</span>
+    <span>MACHINE LEARNING</span><span>·</span>
+    <span>PYTORCH</span><span>·</span><span>NLP</span><span>·</span><span>COMPUTER VISION</span><span>·</span>
+    <span>NEURAL NETWORKS</span><span>·</span><span>LINEAR ALGEBRA</span><span>·</span><span>PYTHON</span><span>·</span>
+    <span>MACHINE LEARNING</span><span>·</span>
+  </div>
+</div>
+
+<!-- ============ LANGUAGES ============ -->
+<section class="section" id="languages" data-section="languages">
+  <div class="sec-head reveal">
+    <span class="sec-index">05</span>
+    <h2>Languages</h2>
+    <span class="sec-cmd" aria-hidden="true">$ locale -a</span>
+  </div>
+
+  <div class="languages-grid reveal">
+    <div class="lang-item">
+      <div class="lang-name">Dutch</div>
+      <div class="lang-bar"><div class="lang-fill" style="--level: 100%"></div></div>
+      <div class="lang-level">Native</div>
+  <div class="lang-list">
+    <div class="lang reveal">
+      <span class="lang-name">Dutch</span>
+      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:100%"></span></span>
+      <span class="lang-level">NATIVE</span>
+    </div>
+    <div class="lang-item">
+      <div class="lang-name">English</div>
+      <div class="lang-bar"><div class="lang-fill" style="--level: 95%"></div></div>
+      <div class="lang-level">Fluent</div>
+    <div class="lang reveal">
+      <span class="lang-name">English</span>
+      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:88%"></span></span>
+      <span class="lang-level">FLUENT</span>
+    </div>
+    <div class="lang-item">
+      <div class="lang-name">German</div>
+      <div class="lang-bar"><div class="lang-fill" style="--level: 40%"></div></div>
+      <div class="lang-level">Conversational</div>
+    <div class="lang reveal">
+      <span class="lang-name">German</span>
+      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:55%"></span></span>
+      <span class="lang-level">CONVERSATIONAL</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="contact-headline reveal">
+    Let's <span class="outline">connect.</span>
+<!-- ============ AFTER HOURS ============ -->
+<section class="section" id="fun" data-section="fun">
+  <div class="sec-head reveal">
+    <span class="sec-index">06</span>
+    <h2>After hours</h2>
+    <span class="sec-cmd" aria-hidden="true">$ ./after_hours.sh</span>
+  </div>
+
+  <p class="fun-lead reveal">
+    By night I cook restaurant meals at Loetje — the same mix of precision and creativity,
+    just a different kind of heat. When I'm not behind a keyboard or a stove:
+  </p>
+
+  <ul class="fun-chips reveal">
+    <li class="chip chip-star">Travelling <span aria-hidden="true">★</span></li>
+    <li class="chip">Gym</li>
+    <li class="chip">Running</li>
+    <li class="chip">Games</li>
+    <li class="chip">Going out</li>
+    <li class="chip">Good dinners out</li>
+    <li class="chip">Quality time with people</li>
+  </ul>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section class="section section-connect" id="connect" data-section="connect">
+  <div class="sec-head reveal">
+    <span class="sec-index">07</span>
+    <h2>Connect</h2>
+    <span class="sec-cmd" aria-hidden="true">$ ssh stellan</span>
+  </div>
+  <div class="contact-links reveal">
+    <a href="mailto:stellan.tulfer@gmail.com" class="contact-link">stellan.tulfer@gmail.com</a>
+    <a href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" class="contact-link">LinkedIn — Stellan Tulfer</a>
+
+  <p class="connect-big reveal">Say <span class="accent">hoi.</span></p>
+  <p class="connect-sub reveal">
+    Whether it's a role, a project, or just a good conversation about where AI is heading —
+    my inbox is open.
+  </p>
+
+  <div class="connect-actions reveal">
+    <a class="btn btn-primary" href="mailto:stellan.tulfer@gmail.com">stellan.tulfer@gmail.com</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" rel="noopener">linkedin.com/in/stellan-tulfer</a>
+  </div>
+  <div class="footer-note reveal">Stellan Tulfer / Almere, NL / 2026</div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const gpaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.getElementById('gpaBar').classList.add('animate');
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const gpaEl = document.getElementById('gpaBar');
+  if (gpaEl) gpaObserver.observe(gpaEl);
+
+  const langObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.lang-fill').forEach(bar => {
+          bar.classList.add('animate');
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.languages-grid').forEach(el => langObserver.observe(el));
+</script>
+</main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Stellan Tulfer</span>
+  <span class="footer-mid" aria-hidden="true">designed &amp; built with curiosity (and a small robot)</span>
+  <span>Almere, NL</span>
+</footer>
+
+<script src="main.js" defer></script>
+<script src="mascot.js" defer></script>
+</body>
+</html>
