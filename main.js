@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stellan Tulfer — AI Student &amp; Working Student AI</title>
+<meta name="description" content="Second-year BSc Artificial Intelligence student at the University of Amsterdam (GPA 8.5) and Working Student AI at REVOCIVIC. Endlessly curious about where AI is heading.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="theme-color" content="#0D1117">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stellan Tulfer — AI Student &amp; Working Student AI">
+<meta property="og:description" content="Second-year BSc AI student @ UvA (GPA 8.5) · Working Student AI @ REVOCIVIC · Endlessly curious about where AI is heading.">
+<meta property="og:url" content="https://stellan-t.github.io/Resume/">
+<meta property="og:image" content="https://stellan-t.github.io/Resume/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<script>
+  // Set theme before first paint to avoid a flash of the wrong theme.
+  (function () {
+    document.documentElement.classList.add('js');
+    var param = new URLSearchParams(location.search).get('theme');
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    var theme = param || stored ||
+      (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
+  })();
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="hero" data-section="hero">
+  <div class="topbar">
+    <span class="topbar-item">ALMERE — THE NETHERLANDS</span>
+    <span class="topbar-item topbar-clock" id="clock" aria-hidden="true">AMS --:--</span>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between dark and light theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <div class="hero-main">
+    <p class="hero-status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span>BSC AI @ UVA</span><span class="sep">·</span>
+      <span>GPA 8.5</span><span class="sep">·</span>
+      <span>WORKING STUDENT AI @ REVOCIVIC</span>
+    </p>
+
+    <h1 class="hero-name">
+      <span class="line-1">STELLAN</span>
+      <span class="line-2">TULFER</span>
+    </h1>
+
+    <p class="hero-role">
+      <span class="typed" id="typed" data-text="second-year BSc Artificial Intelligence · Working Student AI"></span><span class="caret" aria-hidden="true"></span>
+    </p>
+
+    <p class="hero-pitch">
+      I build with machine learning by day and plate up restaurant food by night —
+      endlessly curious about where AI takes us next.
+    </p>
+
+    <div class="hero-links">
+      <a class="hero-link" href="mailto:stellan.tulfer@gmail.com">EMAIL <span aria-hidden="true">↗</span></a>
+      <a class="hero-link" href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" rel="noopener">LINKEDIN <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>SCROLL</span>
+    <span class="scroll-arrow">↓</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about" data-section="about">
+  <div class="sec-head reveal">
+    <span class="sec-index">01</span>
+    <h2>About</h2>
+    <span class="sec-cmd" aria-hidden="true">$ whoami</span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="reveal">
+        I'm a second-year Artificial Intelligence student at the University of Amsterdam
+        <span class="accent">(GPA 8.5)</span> with a deep fascination for how machines learn,
+        how intelligent systems are built, and where the boundaries of the field can still be pushed.
+      </p>
+      <p class="reveal">
+        What keeps me hooked is the pace. Every few months there's a new model, a new technique,
+        a new use case that genuinely amazes me — I'm not chasing one fixed destination in AI,
+        I'm passionate about the whole field and its future, and I want to be building at that
+        edge as it moves.
+      </p>
+      <p class="reveal">
+        I thrive where analytical thinking meets creative problem-solving. Right now both get a
+        daily workout as a Working Student AI at REVOCIVIC — and by night a different kind of
+        workout, cooking in a restaurant kitchen. Wired for logic and creativity, in whichever
+        order the day demands.
+      </p>
+    </div>
+    <aside class="about-facts reveal" aria-label="Quick facts">
+      <div class="fact"><span class="fact-key">location</span><span class="fact-val">Almere, NL</span></div>
+      <div class="fact"><span class="fact-key">study</span><span class="fact-val">BSc AI, UvA</span></div>
+      <div class="fact"><span class="fact-key">gpa</span><span class="fact-val">8.5 / 10</span></div>
+      <div class="fact"><span class="fact-key">role</span><span class="fact-val">Working Student AI</span></div>
+      <div class="fact"><span class="fact-key">status</span><span class="fact-val"><span class="status-dot" aria-hidden="true"></span>online</span></div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience" data-section="experience">
+  <div class="sec-head reveal">
+    <span class="sec-index">02</span>
+    <h2>Experience</h2>
+    <span class="sec-cmd" aria-hidden="true">$ history --work</span>
+  </div>
+
+  <ol class="timeline">
+    <li class="entry reveal is-current">
+      <div class="entry-meta">
+        <span class="entry-dates"><span class="status-dot" aria-hidden="true"></span>MAY 2026 — PRESENT</span>
+        <span class="entry-place">REVOCIVIC</span>
+      </div>
+      <div class="entry-body">
+        <h3>Working Student AI</h3>
+        <ul class="entry-points">
+          <li>Responsible for creating and managing municipality software</li>
+          <li>Leveraging GenAI to accelerate development and streamline delivery processes</li>
+          <li>Translating complex public-sector requirements into practical AI-powered solutions</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="entry reveal" id="entry-loetje">
+      <div class="entry-meta">
+        <span class="entry-dates">OCT 2024 — JUL 2026</span>
+        <span class="entry-place">LOETJE · ALMERE</span>
+      </div>
+      <div class="entry-body">
+        <h3>Kitchen Staff</h3>
+        <ul class="entry-points">
+          <li>Independently preparing menu items and collaborating with the kitchen team to keep service efficient, organized, and consistently high-quality</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="entry reveal">
+      <div class="entry-meta">
+        <span class="entry-dates">OCT 2023 — OCT 2024</span>
+        <span class="entry-place">DEKAMARKT · ALMERE</span>
+      </div>
+      <div class="entry-body">
+        <h3>Supermarket Employee</h3>
+        <ul class="entry-points">
+          <li>Customer service and store operations in a fast-paced retail environment</li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="entry reveal">
+      <div class="entry-meta">
+        <span class="entry-dates">JUL 2022 — JUL 2023</span>
+        <span class="entry-place">KWALITARIA · ALMERE</span>
+      </div>
+      <div class="entry-body">
+        <h3>Delivery Driver</h3>
+        <ul class="entry-points">
+          <li>Efficient route management and customer-facing delivery operations</li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="section" id="education" data-section="education">
+  <div class="sec-head reveal">
+    <span class="sec-index">03</span>
+    <h2>Education</h2>
+    <span class="sec-cmd" aria-hidden="true">$ cat education.log</span>
+  </div>
+
+  <div class="edu-list">
+    <article class="card reveal">
+      <div class="card-top">
+        <div>
+          <h3>BSc Artificial Intelligence</h3>
+          <p class="card-sub">University of Amsterdam</p>
+        </div>
+        <div class="card-side">
+          <span class="card-dates">SEP 2024 — PRESENT</span>
+          <span class="gpa-chip">GPA 8.5<span class="gpa-of"> / 10</span></span>
+        </div>
+      </div>
+      <p class="card-desc">
+        Deep-diving into machine learning, neural networks, and the math that powers them.
+        Building AI models with Python and PyTorch, analyzing large datasets, and developing
+        algorithms for NLP and computer vision — applying linear algebra, calculus, and
+        probability theory daily.
+      </p>
+      <ul class="tags">
+        <li>Machine Learning</li><li>Neural Networks</li><li>Python</li>
+        <li>PyTorch</li><li>NLP</li><li>Computer Vision</li>
+      </ul>
+
+      <div class="minor">
+        <div class="minor-head">
+          <span class="minor-label">MINOR · YEAR 3 · 30 EC</span>
+          <h4>Managing Digital Innovation</h4>
+          <p class="card-sub">Vrije Universiteit Amsterdam</p>
+        </div>
+        <p class="card-desc">
+          A five-course minor exploring how digital technologies — AI, blockchain, IoT, cloud —
+          reshape organizations, work, and business models. Bridges the technical AI background
+          with strategy, innovation management, and the human side of digital transformation.
+        </p>
+        <ul class="tags">
+          <li>Digital Innovation</li><li>Innovation Management</li><li>Business Strategy</li>
+          <li>Digital Platforms</li><li>Industry Disruption</li><li>New Ways of Working</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card reveal">
+      <div class="card-top">
+        <div>
+          <h3>VWO-ATH</h3>
+          <p class="card-sub">Montessori Lyceum Flevoland, Almere</p>
+        </div>
+        <div class="card-side">
+          <span class="card-dates">SEP 2018 — JUN 2024</span>
+          <span class="gpa-chip">GPA 7.6</span>
+        </div>
+      </div>
+      <p class="card-desc">
+        Graduated with a 7.6 GPA across dual profiles: Economics &amp; Society and Culture &amp; Society.
+      </p>
+      <ul class="tags">
+        <li>Economics &amp; Society</li><li>Culture &amp; Society</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section" id="skills" data-section="skills">
+  <div class="sec-head reveal">
+    <span class="sec-index">04</span>
+    <h2>Skills</h2>
+    <span class="sec-cmd" aria-hidden="true">$ ls skills/</span>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill reveal">
+      <span class="skill-index">01</span>
+      <h3>Python Programming</h3>
+      <p>Core language for AI development, data pipelines, and rapid prototyping.</p>
+    </div>
+    <div class="skill reveal">
+      <span class="skill-index">02</span>
+      <h3>Machine Learning</h3>
+      <p>Designing, training, and evaluating models — from classical algorithms to deep learning.</p>
+    </div>
+    <div class="skill reveal">
+      <span class="skill-index">03</span>
+      <h3>Data Analysis</h3>
+      <p>Extracting insights from complex datasets using statistical methods and visualization.</p>
+    </div>
+    <div class="skill reveal">
+      <span class="skill-index">04</span>
+      <h3>Statistical Methods</h3>
+      <p>Hypothesis testing, regression, and probability theory.</p>
+    </div>
+    <div class="skill reveal">
+      <span class="skill-index">05</span>
+      <h3>Interpreting Data</h3>
+      <p>Translating raw numbers into narratives that drive decisions.</p>
+    </div>
+    <div class="skill reveal">
+      <span class="skill-index">06</span>
+      <h3>Problem Solving</h3>
+      <p>Breaking down complex challenges into tractable steps — independently and in teams.</p>
+    </div>
+  </div>
+</section>
+
+<!-- marquee: supporting tech stack -->
+<div class="marquee reveal" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PYTORCH</span><span>·</span><span>NLP</span><span>·</span><span>COMPUTER VISION</span><span>·</span>
+    <span>NEURAL NETWORKS</span><span>·</span><span>LINEAR ALGEBRA</span><span>·</span><span>PYTHON</span><span>·</span>
+    <span>MACHINE LEARNING</span><span>·</span>
+    <span>PYTORCH</span><span>·</span><span>NLP</span><span>·</span><span>COMPUTER VISION</span><span>·</span>
+    <span>NEURAL NETWORKS</span><span>·</span><span>LINEAR ALGEBRA</span><span>·</span><span>PYTHON</span><span>·</span>
+    <span>MACHINE LEARNING</span><span>·</span>
+  </div>
+</div>
+
+<!-- ============ LANGUAGES ============ -->
+<section class="section" id="languages" data-section="languages">
+  <div class="sec-head reveal">
+    <span class="sec-index">05</span>
+    <h2>Languages</h2>
+    <span class="sec-cmd" aria-hidden="true">$ locale -a</span>
+  </div>
+
+  <div class="lang-list">
+    <div class="lang reveal">
+      <span class="lang-name">Dutch</span>
+      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:100%"></span></span>
+      <span class="lang-level">NATIVE</span>
+    </div>
+    <div class="lang reveal">
+      <span class="lang-name">English</span>
+      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:88%"></span></span>
+      <span class="lang-level">FLUENT</span>
+    </div>
+    <div class="lang reveal">
+      <span class="lang-name">German</span>
+      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:55%"></span></span>
+      <span class="lang-level">CONVERSATIONAL</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AFTER HOURS ============ -->
+<section class="section" id="fun" data-section="fun">
+  <div class="sec-head reveal">
+    <span class="sec-index">06</span>
+    <h2>After hours</h2>
+    <span class="sec-cmd" aria-hidden="true">$ ./after_hours.sh</span>
+  </div>
+
+  <p class="fun-lead reveal">
+    By night I cook restaurant meals at Loetje — the same mix of precision and creativity,
+    just a different kind of heat. When I'm not behind a keyboard or a stove:
+  </p>
+
+  <ul class="fun-chips reveal">
+    <li class="chip chip-star">Travelling <span aria-hidden="true">★</span></li>
+    <li class="chip">Gym</li>
+    <li class="chip">Running</li>
+    <li class="chip">Games</li>
+    <li class="chip">Going out</li>
+    <li class="chip">Good dinners out</li>
+    <li class="chip">Quality time with people</li>
+  </ul>
+</section>
+
+<!-- ============ CONNECT ============ -->
+<section class="section section-connect" id="connect" data-section="connect">
+  <div class="sec-head reveal">
+    <span class="sec-index">07</span>
+    <h2>Connect</h2>
+    <span class="sec-cmd" aria-hidden="true">$ ssh stellan</span>
+  </div>
+
+  <p class="connect-big reveal">Say <span class="accent">hoi.</span></p>
+  <p class="connect-sub reveal">
+    Whether it's a role, a project, or just a good conversation about where AI is heading —
+    my inbox is open.
+  </p>
+
+  <div class="connect-actions reveal">
+    <a class="btn btn-primary" href="mailto:stellan.tulfer@gmail.com">stellan.tulfer@gmail.com</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" rel="noopener">linkedin.com/in/stellan-tulfer</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Stellan Tulfer</span>
+  <span class="footer-mid" aria-hidden="true">designed &amp; built with curiosity (and a small robot)</span>
+  <span>Almere, NL</span>
+</footer>
+
+<script src="main.js" defer></script>
+<script src="mascot.js" defer></script>
+</body>
+</html>
