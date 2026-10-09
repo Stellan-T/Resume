@@ -3,34 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stellan Tulfer — AI Student &amp; Working Student AI</title>
+<title>Stellan Tulfer</title>
 <meta name="description" content="Third-year BSc Artificial Intelligence student at the University of Amsterdam (GPA 8.5) and Working Student AI at REVOCIVIC. Endlessly curious about where AI is heading.">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<meta name="theme-color" content="#0D1117">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Stellan Tulfer — AI Student &amp; Working Student AI">
-<meta property="og:description" content="Second-year BSc AI student @ UvA (GPA 8.5) · Working Student AI @ REVOCIVIC · Endlessly curious about where AI is heading.">
+<meta property="og:title" content="Stellan Tulfer">
+<meta property="og:description" content="Third-year BSc AI student @ UvA (GPA 8.5) · Working Student AI @ REVOCIVIC · Endlessly curious about where AI is heading.">
 <meta property="og:url" content="https://stellan-t.github.io/Resume/">
 <meta property="og:image" content="https://stellan-t.github.io/Resume/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 
+<meta name="theme-color" content="#ECEEF1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700;800&family=Instrument+Sans:wght@400;500;600&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
 <script>
-  // Set theme before first paint to avoid a flash of the wrong theme.
+  // Light is the standard look; dark only when the visitor picks it (remembered).
   (function () {
-    document.documentElement.classList.add('js');
-    var param = new URLSearchParams(location.search).get('theme');
     var stored = null;
-    try { stored = localStorage.getItem('theme'); } catch (e) {}
-    var theme = param || stored ||
-      (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
+    try { stored = localStorage.getItem('s3-scheme'); } catch (e) {}
+    document.documentElement.setAttribute('data-scheme', stored === 'dark' ? 'dark' : 'light');
+    document.documentElement.classList.add('js');
   })();
 </script>
 
@@ -38,359 +35,353 @@
 </head>
 <body>
 
-<!-- ============ HERO ============ -->
-<header class="hero" id="hero" data-section="hero">
-  <div class="topbar">
-    <span class="topbar-item">ALMERE — THE NETHERLANDS</span>
-    <span class="topbar-item topbar-clock" id="clock" aria-hidden="true">AMS --:--</span>
-    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between dark and light theme">
-      <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-
-  <div class="hero-main">
-    <p class="hero-status">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span>BSC AI @ UVA</span><span class="sep">·</span>
-      <span>GPA 8.5</span><span class="sep">·</span>
-      <span>WORKING STUDENT AI @ REVOCIVIC</span>
-    </p>
-
-    <h1 class="hero-name">
-      <span class="line-1">STELLAN</span>
-      <span class="line-2">TULFER</span>
-    </h1>
-
-    <p class="hero-role">
-      <span class="typed" id="typed" data-text="third-year BSc Artificial Intelligence · Working Student AI"></span><span class="caret" aria-hidden="true"></span>
-    </p>
-
-    <p class="hero-pitch">
-      I build with machine learning by day and have as much fun as possible by night —
-      endlessly curious about where AI takes us next.
-    </p>
-
-    <div class="hero-links">
-      <a class="hero-link" href="mailto:stellan.tulfer@gmail.com">EMAIL <span aria-hidden="true">↗</span></a>
-      <a class="hero-link" href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" rel="noopener">LINKEDIN <span aria-hidden="true">↗</span></a>
+<header class="nav">
+  <div class="frame nav-in">
+    <a class="mark" href="#top" aria-label="Stellan Tulfer, back to top">Stellan</a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#benchmarks">Benchmarks</a>
+      <a href="#skills">Skills</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#ask">Ask me</a>
+      <a href="#bolt">Bolt</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <span class="status"><span class="dot live" aria-hidden="true"></span><span class="label">online</span><span class="clock" id="clock">AMS --:--</span></span>
+      <button class="icon-btn" id="scheme" type="button" aria-label="Switch between light and dark">
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
     </div>
-  </div>
-
-  <div class="hero-scroll" aria-hidden="true">
-    <span>SCROLL</span>
-    <span class="scroll-arrow">↓</span>
   </div>
 </header>
 
-<main>
+<main id="top">
 
-<!-- ============ ABOUT ============ -->
-<section class="section" id="about" data-section="about">
-  <div class="sec-head reveal">
-    <span class="sec-index">01</span>
-    <h2>About</h2>
-    <span class="sec-cmd" aria-hidden="true">$ whoami</span>
-  </div>
-  <div class="about-grid">
-    <div class="about-text">
-      <p class="reveal">
-        I'm a third-year Artificial Intelligence student at the University of Amsterdam
-        <span class="accent">(GPA 8.5)</span> with a deep fascination for how machines learn,
-        how intelligent systems are built, and where the boundaries of the field can still be pushed.
-      </p>
-      <p class="reveal">
-        What keeps me hooked is the pace. Every few months there's a new model, a new technique,
-        a new use case that genuinely amazes me — I'm not chasing one fixed destination in AI,
-        I'm passionate about the whole field and its future, and I want to be building at that
-        edge as it moves.
-      </p>
-      <p class="reveal">
-        I thrive where analytical thinking meets creative problem-solving. Right now both get a
-        daily workout as a Working Student AI at REVOCIVIC — and at the gym a different kind of
-        workout altogether: show up, put in the reps, push a little further. Wired for logic
-        and creativity, in whichever order the day demands.
-      </p>
+<!-- ================= HERO ================= -->
+<section class="hero frame" aria-labelledby="h-name">
+  <span class="pill"><span class="tag">NOW</span>Working Student AI at REVOCIVIC · BSc AI at UvA</span>
+  <h1 class="h-name" id="h-name">Stellan</h1>
+
+  <div class="hero-row">
+    <div>
+      <p class="lede">Third-year Artificial Intelligence student at the University of Amsterdam and Working Student AI at REVOCIVIC. I build with machine learning <button class="tod-link" type="button" data-hour="13">by day</button> and have as much fun as possible <button class="tod-link" type="button" data-hour="20">by night</button>, endlessly curious about where AI takes us next.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#ask">Ask me anything <span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
     </div>
-    <aside class="about-facts reveal" aria-label="Quick facts">
-      <div class="fact"><span class="fact-key">location</span><span class="fact-val">Almere, NL</span></div>
-      <div class="fact"><span class="fact-key">study</span><span class="fact-val">BSc AI, UvA</span></div>
-      <div class="fact"><span class="fact-key">gpa</span><span class="fact-val">8.5 / 10</span></div>
-      <div class="fact"><span class="fact-key">role</span><span class="fact-val">Working Student AI</span></div>
-      <div class="fact"><span class="fact-key">status</span><span class="fact-val"><span class="status-dot" aria-hidden="true"></span>online</span></div>
-    </aside>
+    <dl class="meta">
+      <dt>Based in</dt><dd>Almere, NL</dd>
+      <dt>Studying</dt><dd>BSc AI, University of Amsterdam · GPA 8.5</dd>
+      <dt>Working</dt><dd>REVOCIVIC, Amsterdam, since May 2026</dd>
+      <dt>Languages</dt><dd>Dutch, English, German</dd>
+    </dl>
+  </div>
+
+  <figure class="panel world" aria-label="A 3D miniature of Stellan's world between Almere and Amsterdam">
+    <div class="world-head">
+      <span class="eyebrow">Almere ⇄ Amsterdam</span>
+      <span class="tod-now" id="tod-now"><b>--:--</b> AMS · by day</span>
+    </div>
+    <div class="world-stage" id="world-stage">
+      <span class="orb sun" id="sun" aria-hidden="true"></span>
+      <span class="orb moon" id="moon" aria-hidden="true"></span>
+      <canvas aria-hidden="true"></canvas>
+      <div class="world-labels" id="world-labels" aria-hidden="true"></div>
+      <div class="world-card" id="world-card" aria-live="polite"></div>
+    </div>
+    <div class="world-foot">
+      <div class="time">
+        <button class="chip" type="button" id="live" aria-pressed="true">Live</button>
+        <button class="chip" type="button" id="play">Play a day</button>
+        <input type="range" id="tod" min="0" max="24" step="0.25" value="12" aria-label="Time of day">
+      </div>
+      <div class="places" id="places" role="group" aria-label="Places"></div>
+    </div>
+  </figure>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec frame" id="about" aria-labelledby="t-about">
+  <div class="sec-top">
+    <div>
+      <span class="eyebrow">About</span>
+      <h2 class="h2" id="t-about"><span class="scr">About me</span></h2>
+    </div>
+  </div>
+  <div class="about">
+    <div class="about-text">
+      <p>I'm a third-year Artificial Intelligence student at the University of Amsterdam <span class="hl">(GPA 8.5)</span> with a deep fascination for how machines learn, how intelligent systems are built, and where the boundaries of the field can still be pushed.</p>
+      <p>What keeps me hooked is the pace. Every few months there's a new model, a new technique, a new use case that genuinely amazes me — I'm not chasing one fixed destination in AI, I'm passionate about the whole field and its future, and I want to be building at that edge as it moves.</p>
+      <p>I thrive where analytical thinking meets creative problem-solving. Right now both get a daily workout as a Working Student AI at REVOCIVIC — and at the gym a different kind of workout altogether: show up, put in the reps, push a little further. Wired for logic and creativity, in whichever order the day demands.</p>
+    </div>
+    <dl class="panel facts">
+      <div class="fact"><dt>Based in</dt><dd>Almere, NL</dd></div>
+      <div class="fact"><dt>Study</dt><dd>BSc Artificial Intelligence<small>University of Amsterdam · Sep 2024 – now · GPA 8.5 / 10</small></dd></div>
+      <div class="fact"><dt>Minor</dt><dd>Managing Digital Innovation<small>Vrije Universiteit Amsterdam · Year 3 · 30 EC</small></dd></div>
+      <div class="fact"><dt>Work</dt><dd>Working Student AI<small>REVOCIVIC, Amsterdam · May 2026 – now</small></dd></div>
+      <div class="fact"><dt>School</dt><dd>VWO-ATH<small>Montessori Lyceum Flevoland, Almere · 2018 – 2024 · GPA 7.6</small></dd></div>
+      <div class="fact"><dt>Languages</dt><dd>Dutch, English, German<small>Native · fluent · conversational</small></dd></div>
+      <div class="fact"><dt>Inbox</dt><dd>Open<small>Questions, projects, or a good conversation about where AI is heading</small></dd></div>
+    </dl>
   </div>
 </section>
 
-<!-- ============ EXPERIENCE ============ -->
-<section class="section" id="experience" data-section="experience">
-  <div class="sec-head reveal">
-    <span class="sec-index">02</span>
-    <h2>Experience</h2>
-    <span class="sec-cmd" aria-hidden="true">$ history --work</span>
+<!-- ================= BENCHMARKS ================= -->
+<section class="sec frame" id="benchmarks" aria-labelledby="t-bench">
+  <div class="sec-top">
+    <div>
+      <span class="eyebrow">Grades &amp; languages</span>
+      <h2 class="h2" id="t-bench"><span class="scr">Benchmarks</span></h2>
+    </div>
   </div>
-
-  <ol class="timeline">
-    <li class="entry reveal is-current">
-      <div class="entry-meta">
-        <span class="entry-dates"><span class="status-dot" aria-hidden="true"></span>MAY 2026 — PRESENT</span>
-        <span class="entry-place">REVOCIVIC · AMSTERDAM</span>
+  <div class="evals">
+    <article class="panel eval">
+      <div class="eval-head"><h3>Grades</h3><span class="eyebrow">GPA · 0–10</span></div>
+      <div class="bars">
+        <div class="bar-row" tabindex="0">
+          <span class="bl">BSc Artificial Intelligence<small>University of Amsterdam · 2024 – now</small></span>
+          <span class="bv">8.5<span> / 10</span></span>
+          <span class="track"><span class="fill" style="--v:0.85"></span></span>
+          <span class="tip">8.5 / 10 · BSc AI, UvA</span>
+        </div>
+        <div class="bar-row" tabindex="0">
+          <span class="bl">VWO-ATH<small>Montessori Lyceum Flevoland · 2018 – 2024</small></span>
+          <span class="bv">7.6<span> / 10</span></span>
+          <span class="track"><span class="fill" style="--v:0.76"></span></span>
+          <span class="tip">7.6 / 10 · VWO-ATH</span>
+        </div>
       </div>
-      <div class="entry-body">
-        <h3>Working Student AI</h3>
-        <ul class="entry-points">
+      <div class="scale" aria-hidden="true"><span>0</span><span>5</span><span>10</span></div>
+    </article>
+    <article class="panel eval">
+      <div class="eval-head"><h3>Languages</h3><span class="eyebrow">Level</span></div>
+      <div class="bars">
+        <div class="bar-row" tabindex="0">
+          <span class="bl">Dutch</span><span class="bv">Native</span>
+          <span class="track"><span class="fill" style="--v:1"></span></span>
+          <span class="tip">Dutch · native</span>
+        </div>
+        <div class="bar-row" tabindex="0">
+          <span class="bl">English</span><span class="bv">Fluent</span>
+          <span class="track"><span class="fill" style="--v:0.88"></span></span>
+          <span class="tip">English · fluent</span>
+        </div>
+        <div class="bar-row" tabindex="0">
+          <span class="bl">German</span><span class="bv">Conversational</span>
+          <span class="track"><span class="fill" style="--v:0.55"></span></span>
+          <span class="tip">German · conversational</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="sec frame" id="skills" aria-labelledby="t-skills">
+  <div class="sec-top">
+    <div>
+      <span class="eyebrow">Skills</span>
+      <h2 class="h2" id="t-skills"><span class="scr">What I'm good at</span></h2>
+    </div>
+    <p class="sec-note">Machine learning, neural networks and the math that powers them, built with Python and PyTorch for NLP and computer vision.</p>
+  </div>
+  <div class="caps">
+    <article class="panel cap"><h3>Python Programming</h3><p>Core language for AI development, data pipelines, and rapid prototyping.</p></article>
+    <article class="panel cap"><h3>Machine Learning</h3><p>Designing, training, and evaluating models, from classical algorithms to deep learning.</p></article>
+    <article class="panel cap"><h3>Data Analysis</h3><p>Extracting insights from complex datasets using statistical methods and visualization.</p></article>
+    <article class="panel cap"><h3>Statistical Methods</h3><p>Hypothesis testing, regression, and probability theory.</p></article>
+    <article class="panel cap"><h3>Interpreting Data</h3><p>Translating raw numbers into narratives that drive decisions.</p></article>
+    <article class="panel cap"><h3>Problem Solving</h3><p>Breaking down complex challenges into tractable steps, independently and in teams.</p></article>
+  </div>
+  <div class="panel offduty">
+    <span class="eyebrow">After hours</span>
+    <ul class="tags">
+      <li class="star">Travelling ★</li><li>Gym</li><li>Running</li><li>Games</li><li>Going out</li><li>Good dinners out</li><li>Quality time with people</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section class="sec frame" id="timeline" aria-labelledby="t-time">
+  <div class="sec-top">
+    <div>
+      <span class="eyebrow">Experience &amp; education</span>
+      <h2 class="h2" id="t-time"><span class="scr">Timeline</span></h2>
+    </div>
+    <div class="filters" role="group" aria-label="Filter the timeline">
+      <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-f="work" aria-pressed="false"><i style="background:var(--c-work)"></i>Work</button>
+      <button class="chip" type="button" data-f="study" aria-pressed="false"><i style="background:var(--c-study)"></i>Study</button>
+    </div>
+  </div>
+  <ol class="log">
+    <li class="rel now" data-k="study">
+      <div class="rel-when"><b>2026</b>Year 3</div>
+      <div class="panel rel-body">
+        <div class="rel-top"><h3>Minor: Managing Digital Innovation</h3><span class="kind"><i style="background:var(--c-study)"></i>Study</span></div>
+        <p class="rel-where">Vrije Universiteit Amsterdam · 30 EC</p>
+        <ul class="pts">
+          <li>A five-course minor exploring how digital technologies (AI, blockchain, IoT, cloud) reshape organizations, work, and business models.</li>
+          <li>Bridges the technical AI background with strategy, innovation management, and the human side of digital transformation.</li>
+        </ul>
+        <ul class="tags"><li>Digital Innovation</li><li>Innovation Management</li><li>Business Strategy</li><li>Digital Platforms</li><li>Industry Disruption</li><li>New Ways of Working</li></ul>
+      </div>
+    </li>
+    <li class="rel now" data-k="work">
+      <div class="rel-when"><b>2026</b>May 2026 – now</div>
+      <div class="panel rel-body">
+        <div class="rel-top"><h3>Working Student AI</h3><span class="kind"><i style="background:var(--c-work)"></i>Work</span></div>
+        <p class="rel-where">REVOCIVIC · Amsterdam</p>
+        <ul class="pts">
           <li>Responsible for creating and managing municipality software</li>
           <li>Leveraging GenAI to accelerate development and streamline delivery processes</li>
           <li>Translating complex public-sector requirements into practical AI-powered solutions</li>
         </ul>
       </div>
     </li>
-
-    <li class="entry reveal" id="entry-loetje">
-      <div class="entry-meta">
-        <span class="entry-dates">OCT 2024 — JUL 2026</span>
-        <span class="entry-place">LOETJE · ALMERE</span>
-      </div>
-      <div class="entry-body">
-        <h3>Kitchen Staff</h3>
-        <ul class="entry-points">
-          <li>Independently preparing menu items and collaborating with the kitchen team to keep service efficient, organized, and consistently high-quality</li>
-        </ul>
+    <li class="rel" data-k="work">
+      <div class="rel-when"><b>2024</b>Oct 2024 – Jul 2026</div>
+      <div class="panel rel-body">
+        <div class="rel-top"><h3>Kitchen Staff</h3><span class="kind"><i style="background:var(--c-work)"></i>Work</span></div>
+        <p class="rel-where">Loetje · Almere</p>
+        <ul class="pts"><li>Independently preparing menu items and collaborating with the kitchen team to keep service efficient, organized, and consistently high-quality</li></ul>
       </div>
     </li>
-
-    <li class="entry reveal">
-      <div class="entry-meta">
-        <span class="entry-dates">OCT 2023 — OCT 2024</span>
-        <span class="entry-place">DEKAMARKT · ALMERE</span>
-      </div>
-      <div class="entry-body">
-        <h3>Supermarket Employee</h3>
-        <ul class="entry-points">
-          <li>Customer service and store operations in a fast-paced retail environment</li>
+    <li class="rel now" data-k="study">
+      <div class="rel-when"><b>2024</b>Sep 2024 – now</div>
+      <div class="panel rel-body">
+        <div class="rel-top"><h3>BSc Artificial Intelligence</h3><span class="kind"><i style="background:var(--c-study)"></i>Study</span></div>
+        <p class="rel-where">University of Amsterdam · GPA 8.5 / 10</p>
+        <ul class="pts">
+          <li>Deep-diving into machine learning, neural networks, and the math that powers them.</li>
+          <li>Building AI models with Python and PyTorch, analyzing large datasets, and developing algorithms for NLP and computer vision.</li>
+          <li>Applying linear algebra, calculus, and probability theory daily.</li>
         </ul>
+        <ul class="tags"><li>Machine Learning</li><li>Neural Networks</li><li>Python</li><li>PyTorch</li><li>NLP</li><li>Computer Vision</li></ul>
       </div>
     </li>
-
-    <li class="entry reveal">
-      <div class="entry-meta">
-        <span class="entry-dates">JUL 2022 — JUL 2023</span>
-        <span class="entry-place">KWALITARIA · ALMERE</span>
+    <li class="rel" data-k="work">
+      <div class="rel-when"><b>2023</b>Oct 2023 – Oct 2024</div>
+      <div class="panel rel-body">
+        <div class="rel-top"><h3>Supermarket Employee</h3><span class="kind"><i style="background:var(--c-work)"></i>Work</span></div>
+        <p class="rel-where">DekaMarkt · Almere</p>
+        <ul class="pts"><li>Customer service and store operations in a fast-paced retail environment</li></ul>
       </div>
-      <div class="entry-body">
-        <h3>Delivery Driver</h3>
-        <ul class="entry-points">
-          <li>Efficient route management and customer-facing delivery operations</li>
-        </ul>
+    </li>
+    <li class="rel" data-k="work">
+      <div class="rel-when"><b>2022</b>Jul 2022 – Jul 2023</div>
+      <div class="panel rel-body">
+        <div class="rel-top"><h3>Delivery Driver</h3><span class="kind"><i style="background:var(--c-work)"></i>Work</span></div>
+        <p class="rel-where">Kwalitaria · Almere</p>
+        <ul class="pts"><li>Efficient route management and customer-facing delivery operations</li></ul>
+      </div>
+    </li>
+    <li class="rel" data-k="study">
+      <div class="rel-when"><b>2018</b>2018 – 2024</div>
+      <div class="panel rel-body">
+        <div class="rel-top"><h3>VWO-ATH</h3><span class="kind"><i style="background:var(--c-study)"></i>Study</span></div>
+        <p class="rel-where">Montessori Lyceum Flevoland · Almere · GPA 7.6</p>
+        <ul class="pts"><li>Graduated with a 7.6 GPA across dual profiles: Economics &amp; Society and Culture &amp; Society.</li></ul>
       </div>
     </li>
   </ol>
 </section>
 
-<!-- ============ EDUCATION ============ -->
-<section class="section" id="education" data-section="education">
-  <div class="sec-head reveal">
-    <span class="sec-index">03</span>
-    <h2>Education</h2>
-    <span class="sec-cmd" aria-hidden="true">$ cat education.log</span>
+<!-- ================= ASK ME ================= -->
+<section class="sec frame" id="ask" aria-labelledby="t-ask">
+  <div class="sec-top">
+    <div>
+      <span class="eyebrow">Ask me</span>
+      <h2 class="h2" id="t-ask"><span class="scr">Ask me anything</span></h2>
+    </div>
   </div>
+  <div class="panel chat">
+    <div class="chat-head">
+      <span class="who-pill"><span class="av">ST</span>Stellan <span class="dot" aria-hidden="true"></span></span>
+      <button class="chip" type="button" id="reset">New chat</button>
+    </div>
+    <div class="msgs" id="msgs" aria-live="polite"></div>
+    <div class="qmenu">
+      <div class="qtabs" id="qtabs" role="tablist" aria-label="Question topics"></div>
+      <div class="qlist" id="prompts" role="tabpanel"></div>
+    </div>
+    <form class="composer" id="composer" autocomplete="off">
+      <input id="askbox" type="text" placeholder="Ask Stellan something…" aria-label="Ask Stellan something">
+      <button class="send" type="submit" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </form>
+  </div>
+</section>
 
-  <div class="edu-list">
-    <article class="card reveal">
-      <div class="card-top">
-        <div>
-          <h3>BSc Artificial Intelligence</h3>
-          <p class="card-sub">University of Amsterdam</p>
-        </div>
-        <div class="card-side">
-          <span class="card-dates">SEP 2024 — PRESENT</span>
-          <span class="gpa-chip">GPA 8.5<span class="gpa-of"> / 10</span></span>
-        </div>
+<!-- ================= BOLT ================= -->
+<section class="sec frame" id="bolt" aria-labelledby="t-bolt">
+  <div class="sec-top">
+    <div>
+      <span class="eyebrow">Bolt</span>
+      <h2 class="h2" id="t-bolt">Meet Bolt</h2>
+    </div>
+    <p class="sec-note">My robot sidekick. Pick a command and he acts it out, or click him for a workout.</p>
+  </div>
+  <div class="agent">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span>bolt@stellan: ~/routines</span></div>
+      <div class="term-out" id="term" aria-live="polite"></div>
+      <div class="cmds" id="cmds">
+        <button class="cmd" type="button" data-run="wave">wave --hoi</button>
+        <button class="cmd" type="button" data-run="type">code --revocivic</button>
+        <button class="cmd" type="button" data-run="pushups">gym --pushups</button>
+        <button class="cmd" type="button" data-run="pullups">gym --pullups</button>
+        <button class="cmd" type="button" data-run="curl">gym --curls</button>
+        <button class="cmd" type="button" data-run="run">run</button>
+        <button class="cmd" type="button" data-run="dance">dance --going-out</button>
+        <button class="cmd" type="button" data-run="cook">cook --loetje</button>
+        <button class="cmd" type="button" data-run="graduate">graduate --vwo</button>
+        <button class="cmd" type="button" data-run="carry">restock --dekamarkt</button>
+        <button class="cmd" type="button" data-run="deliver">deliver --kwalitaria</button>
+        <button class="cmd" type="button" data-run="think">think --whoami</button>
       </div>
-      <p class="card-desc">
-        Deep-diving into machine learning, neural networks, and the math that powers them.
-        Building AI models with Python and PyTorch, analyzing large datasets, and developing
-        algorithms for NLP and computer vision — applying linear algebra, calculus, and
-        probability theory daily.
-      </p>
-      <ul class="tags">
-        <li>Machine Learning</li><li>Neural Networks</li><li>Python</li>
-        <li>PyTorch</li><li>NLP</li><li>Computer Vision</li>
-      </ul>
+    </div>
+    <div class="panel stage" id="stage">
+      <div class="floor" aria-hidden="true"></div>
+      <div class="stage-label"><span class="eyebrow">Bolt · live</span></div>
+      <span class="stage-now" id="stage-now">idle</span>
+      <div class="stage-flat">Bolt needs WebGL to appear here. The commands still print in the terminal.</div>
+    </div>
+  </div>
+</section>
 
-      <div class="minor">
-        <div class="minor-head">
-          <span class="minor-label">MINOR · YEAR 3 · 30 EC</span>
-          <h4>Managing Digital Innovation</h4>
-          <p class="card-sub">Vrije Universiteit Amsterdam</p>
-        </div>
-        <p class="card-desc">
-          A five-course minor exploring how digital technologies — AI, blockchain, IoT, cloud —
-          reshape organizations, work, and business models. Bridges the technical AI background
-          with strategy, innovation management, and the human side of digital transformation.
-        </p>
-        <ul class="tags">
-          <li>Digital Innovation</li><li>Innovation Management</li><li>Business Strategy</li>
-          <li>Digital Platforms</li><li>Industry Disruption</li><li>New Ways of Working</li>
-        </ul>
+<!-- ================= CONTACT ================= -->
+<section class="sec frame" id="contact" aria-labelledby="t-end">
+  <div class="endpoint">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <p class="big" id="t-end">Say <b>hoi.</b></p>
+      <p class="sub">Whether it's a question, a project, or just a good conversation about where AI is heading, my inbox is open.</p>
+    </div>
+    <div class="panel req">
+      <div class="req-rows">
+        <div class="req-row"><span class="k">Email</span><span class="v" id="email">stellan.tulfer@gmail.com</span><button class="copy" type="button" id="copy">Copy</button></div>
+        <div class="req-row"><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" rel="noopener">linkedin.com/in/stellan-tulfer</a><span></span></div>
+        <div class="req-row"><span class="k">Based in</span><span class="v">Almere, NL</span><span></span></div>
       </div>
-    </article>
-
-    <article class="card reveal">
-      <div class="card-top">
-        <div>
-          <h3>VWO-ATH</h3>
-          <p class="card-sub">Montessori Lyceum Flevoland, Almere</p>
-        </div>
-        <div class="card-side">
-          <span class="card-dates">SEP 2018 — JUN 2024</span>
-          <span class="gpa-chip">GPA 7.6</span>
-        </div>
+      <div class="req-actions">
+        <a class="btn btn-primary" href="mailto:stellan.tulfer@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
       </div>
-      <p class="card-desc">
-        Graduated with a 7.6 GPA across dual profiles: Economics &amp; Society and Culture &amp; Society.
-      </p>
-      <ul class="tags">
-        <li>Economics &amp; Society</li><li>Culture &amp; Society</li>
-      </ul>
-    </article>
-  </div>
-</section>
-
-<!-- ============ SKILLS ============ -->
-<section class="section" id="skills" data-section="skills">
-  <div class="sec-head reveal">
-    <span class="sec-index">04</span>
-    <h2>Skills</h2>
-    <span class="sec-cmd" aria-hidden="true">$ ls skills/</span>
-  </div>
-
-  <div class="skills-grid">
-    <div class="skill reveal">
-      <span class="skill-index">01</span>
-      <h3>Python Programming</h3>
-      <p>Core language for AI development, data pipelines, and rapid prototyping.</p>
     </div>
-    <div class="skill reveal">
-      <span class="skill-index">02</span>
-      <h3>Machine Learning</h3>
-      <p>Designing, training, and evaluating models — from classical algorithms to deep learning.</p>
-    </div>
-    <div class="skill reveal">
-      <span class="skill-index">03</span>
-      <h3>Data Analysis</h3>
-      <p>Extracting insights from complex datasets using statistical methods and visualization.</p>
-    </div>
-    <div class="skill reveal">
-      <span class="skill-index">04</span>
-      <h3>Statistical Methods</h3>
-      <p>Hypothesis testing, regression, and probability theory.</p>
-    </div>
-    <div class="skill reveal">
-      <span class="skill-index">05</span>
-      <h3>Interpreting Data</h3>
-      <p>Translating raw numbers into narratives that drive decisions.</p>
-    </div>
-    <div class="skill reveal">
-      <span class="skill-index">06</span>
-      <h3>Problem Solving</h3>
-      <p>Breaking down complex challenges into tractable steps — independently and in teams.</p>
-    </div>
-  </div>
-</section>
-
-<!-- marquee: supporting tech stack -->
-<div class="marquee reveal" aria-hidden="true">
-  <div class="marquee-track">
-    <span>PYTORCH</span><span>·</span><span>NLP</span><span>·</span><span>COMPUTER VISION</span><span>·</span>
-    <span>NEURAL NETWORKS</span><span>·</span><span>LINEAR ALGEBRA</span><span>·</span><span>PYTHON</span><span>·</span>
-    <span>MACHINE LEARNING</span><span>·</span>
-    <span>PYTORCH</span><span>·</span><span>NLP</span><span>·</span><span>COMPUTER VISION</span><span>·</span>
-    <span>NEURAL NETWORKS</span><span>·</span><span>LINEAR ALGEBRA</span><span>·</span><span>PYTHON</span><span>·</span>
-    <span>MACHINE LEARNING</span><span>·</span>
-  </div>
-</div>
-
-<!-- ============ LANGUAGES ============ -->
-<section class="section" id="languages" data-section="languages">
-  <div class="sec-head reveal">
-    <span class="sec-index">05</span>
-    <h2>Languages</h2>
-    <span class="sec-cmd" aria-hidden="true">$ locale -a</span>
-  </div>
-
-  <div class="lang-list">
-    <div class="lang reveal">
-      <span class="lang-name">Dutch</span>
-      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:100%"></span></span>
-      <span class="lang-level">NATIVE</span>
-    </div>
-    <div class="lang reveal">
-      <span class="lang-name">English</span>
-      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:88%"></span></span>
-      <span class="lang-level">FLUENT</span>
-    </div>
-    <div class="lang reveal">
-      <span class="lang-name">German</span>
-      <span class="lang-bar" aria-hidden="true"><span class="lang-fill" style="--w:55%"></span></span>
-      <span class="lang-level">CONVERSATIONAL</span>
-    </div>
-  </div>
-</section>
-
-<!-- ============ AFTER HOURS ============ -->
-<section class="section" id="fun" data-section="fun">
-  <div class="sec-head reveal">
-    <span class="sec-index">06</span>
-    <h2>After hours</h2>
-    <span class="sec-cmd" aria-hidden="true">$ ./after_hours.sh</span>
-  </div>
-
-  <p class="fun-lead reveal">
-    When I'm not behind a keyboard I'm usually at the gym, on a run, or out exploring
-    somewhere new. Different setting, same habits: show up, stay curious, keep moving.
-  </p>
-
-  <ul class="fun-chips reveal">
-    <li class="chip chip-star">Travelling <span aria-hidden="true">★</span></li>
-    <li class="chip">Gym</li>
-    <li class="chip">Running</li>
-    <li class="chip">Games</li>
-    <li class="chip">Going out</li>
-    <li class="chip">Good dinners out</li>
-    <li class="chip">Quality time with people</li>
-  </ul>
-</section>
-
-<!-- ============ CONNECT ============ -->
-<section class="section section-connect" id="connect" data-section="connect">
-  <div class="sec-head reveal">
-    <span class="sec-index">07</span>
-    <h2>Connect</h2>
-    <span class="sec-cmd" aria-hidden="true">$ ssh stellan</span>
-  </div>
-
-  <p class="connect-big reveal">Say <span class="accent">hoi.</span></p>
-  <p class="connect-sub reveal">
-    Whether it's a question, a project, or just a good conversation about where AI is heading,
-    my inbox is open.
-  </p>
-
-  <div class="connect-actions reveal">
-    <a class="btn btn-primary" href="mailto:stellan.tulfer@gmail.com">stellan.tulfer@gmail.com</a>
-    <a class="btn btn-ghost" href="https://www.linkedin.com/in/stellan-tulfer" target="_blank" rel="noopener">linkedin.com/in/stellan-tulfer</a>
   </div>
 </section>
 
 </main>
 
-<footer class="footer">
-  <span>© <span id="year">2026</span> Stellan Tulfer</span>
-  <span class="footer-mid" aria-hidden="true">designed &amp; built with curiosity (and a small robot)</span>
-  <span>Almere, NL</span>
+<footer class="frame foot">
+  <span>© <span id="year">2026</span> Stellan Tulfer · Almere, NL</span>
+  <span>Built with curiosity (and a small robot)</span>
 </footer>
 
-<script src="main.js" defer></script>
-<script src="mascot.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
