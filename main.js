@@ -215,13 +215,6 @@
     return { ph: ph, tag: morning ? 'morning' : 'evening', k: morning ? 'Morning · 07–09' : 'Evening · 17–22', h: 'At home or the gym', ids: ['gym', 'home'] };
   }
 
-  var placesEl = $('#places');
-  PLACES.forEach(function (p) {
-    var b = document.createElement('button');
-    b.className = 'chip'; b.type = 'button'; b.setAttribute('aria-pressed', 'false'); b.setAttribute('data-place', p.id);
-    b.textContent = p.label;
-    placesEl.appendChild(b);
-  });
 
 
   /* ================= Bolt's terminal ================= */
@@ -769,17 +762,10 @@
     stage.addEventListener('pointercancel', function () { drag = null; stage.classList.remove('dragging'); });
 
     /* ----- time of day ----- */
-    var slider = $('#tod'), liveBtn = $('#live'), playBtn = $('#play');
-    var live = true, playing = false, played = 0, hour = 12, lastLive = 0;
+    /* always live: the world runs on the current Amsterdam time */
+    var playing = false, hour = 12, lastLive = 0;
     function liveHour() { var p = amsParts(); return p[0] + p[1] / 60; }
     hour = liveHour();
-    function setLive(on) { live = on; liveBtn.setAttribute('aria-pressed', String(on)); if (on) { playing = false; hour = liveHour(); } }
-    slider.addEventListener('input', function () { setLive(false); playing = false; hour = +slider.value; });
-    liveBtn.addEventListener('click', function () { setLive(true); });
-    playBtn.addEventListener('click', function () { setLive(false); playing = true; played = 0; if (reducedMotion) { hour = (hour + 6) % 24; playing = false; } });
-    $$('.tod-link').forEach(function (b) {
-      b.addEventListener('click', function () { setLive(false); playing = false; hour = +b.getAttribute('data-hour'); });
-    });
 
     var sunEl = $('#sun'), moonEl = $('#moon'), todEl = $('#tod-now');
     var lastLabel = '', lastMode = null, lastCardW = 0;
@@ -788,9 +774,7 @@
     var t0 = performance.now() / 1000;
     visibleLoop(stage, function (t, dt) {
       var motion = !reducedMotion;
-      if (live && t - lastLive > 1) { hour = liveHour(); lastLive = t; }
-      if (playing) { var adv = dt * 1.9; hour = (hour + adv) % 24; played += adv; if (played >= 24) playing = false; }
-      if (document.activeElement !== slider) slider.value = String(Math.round(hour * 4) / 4);
+      if (t - lastLive > 1) { hour = liveHour(); lastLive = t; }
 
       /* day, dusk, night */
       var a = (hour - 6) / 12 * Math.PI, e = Math.sin(a);
